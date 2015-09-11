@@ -12,9 +12,9 @@ png(filename = "plot3.png",
 # draw plots 
 plot(epc$DateTime,epc$Sub_metering_1, type="l", xlab="", ylab = "Energy sub metering")
 par(new = TRUE)
-plot(epc$DateTime,epc$Sub_metering_2, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_1)), axes = FALSE, xlab = "", ylab = "", type="l", col=2)
+plot(epc$DateTime,epc$Sub_metering_2, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_2,epc$Sub_metering_3)), axes = FALSE, xlab = "", ylab = "", type="l", col=2)
 par(new = TRUE)
-plot(epc$DateTime,epc$Sub_metering_3, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_1)), axes = FALSE, xlab = "", ylab = "", type="l", col="blue")
+plot(epc$DateTime,epc$Sub_metering_3, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_2,epc$Sub_metering_3)), axes = FALSE, xlab = "", ylab = "", type="l", col="blue")
 
 # draw legend
 legend("topright", lty = c(1,1,1), col = c("black", "red", "blue"), legend = c("sub_metering_1", "sub_metering_2", "sub_metering_3"))
