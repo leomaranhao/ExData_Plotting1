@@ -5,12 +5,8 @@ epc<-read.csv(file="household_power_consumption.txt", sep=";", na.strings="?", c
 epc<-filter(epc, Date %in% c("1/2/2007","2/2/2007"))
 epc<-mutate(epc, DateTime=as.POSIXct(strptime(paste(Date,Time), "%d/%m/%Y %H:%M:%S")))
 
-# set locale to english
-locale <- Sys.getlocale("LC_TIME")
-Sys.setlocale("LC_TIME", "English")
-
 # open device png
-png(filename = "graph4.png",
+png(filename = "plot4.png",
     width = 480, height = 480, units = "px", pointsize = 12)
 
 # set margins
@@ -37,6 +33,3 @@ plot(epc$DateTime,epc$Global_reactive_power, type="l", xlab="datetime", ylab = "
 
 #close device
 dev.off()
-
-# go back to the initial locale
-Sys.setlocale("LC_TIME", locale)
