@@ -10,7 +10,7 @@ png(filename = "plot3.png",
     width = 480, height = 480, units = "px", pointsize = 12)
 
 # draw plots 
-plot(epc$DateTime,epc$Sub_metering_1, type="l", xlab="", ylab = "Energy sub metering")
+plot(epc$DateTime,epc$Sub_metering_1, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_2,epc$Sub_metering_3)), type="l", xlab="", ylab = "Energy sub metering")
 par(new = TRUE)
 plot(epc$DateTime,epc$Sub_metering_2, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_2,epc$Sub_metering_3)), axes = FALSE, xlab = "", ylab = "", type="l", col=2)
 par(new = TRUE)

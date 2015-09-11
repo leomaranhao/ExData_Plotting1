@@ -16,7 +16,7 @@ par(mfcol = c(2, 2), mar = c(5, 4, 2, 1))
 plot(epc$DateTime,epc$Global_active_power, type="l", xlab="", ylab = "Global Active Power")
 
 #draw second plot
-plot(epc$DateTime,epc$Sub_metering_1, type="l", xlab="", ylab = "Energy sub metering")
+plot(epc$DateTime,epc$Sub_metering_1, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_2,epc$Sub_metering_3)), type="l", xlab="", ylab = "Energy sub metering")
 par(new = TRUE)
 plot(epc$DateTime,epc$Sub_metering_2, ylim=range(c(epc$Sub_metering_1,epc$Sub_metering_2,epc$Sub_metering_3)), axes = FALSE, xlab = "", ylab = "", type="l", col=2)
 par(new = TRUE)
